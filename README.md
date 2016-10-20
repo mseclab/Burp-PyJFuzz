@@ -8,8 +8,6 @@ In order to make it works, download and install burp extension, then send your r
 ## Screenshot
 ![Burp](https://s15.postimg.org/574yb5c7f/Schermata_2016_10_18_alle_10_39_18.png "Burp Suite Intruder")
 
-![Burp](https://s12.postimg.org/pf7h2ybvx/Schermata_2016_10_20_alle_14_37_38.png "Burp-PyJFuzz Tab")
-
 ## Happy fuzzing
 Please if you want share details about your finding I would be glad to write them here!
 
