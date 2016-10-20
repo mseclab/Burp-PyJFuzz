@@ -73,7 +73,7 @@ Happy fuzzing<br><br>
         callbacks.addSuiteTab(self)
         self.initPanelConfig()
         self._jTabbedPane.addTab("Configuration", self._jPanel)
-        self._jTabbedPane.addTab("About", self._jAboutPanel)
+        #self._jTabbedPane.addTab("About", self._jAboutPanel)  Leave commented!
         return
 
     def getUiComponent(self):
