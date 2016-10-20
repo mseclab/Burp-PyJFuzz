@@ -73,7 +73,7 @@ Happy fuzzing<br><br>
         callbacks.addSuiteTab(self)
         self.initPanelConfig()
         self._jTabbedPane.addTab("Configuration", self._jPanel)
-        self._jTabbedPane.addTab("About", self._jAboutPanel) Please leave commented!!!
+        self._jTabbedPane.addTab("About", self._jAboutPanel)
         return
 
     def getUiComponent(self):
@@ -160,7 +160,6 @@ Happy fuzzing<br><br>
         cmdline += "-t %s " % techniques if techniques != "" else ""
         cmdline += "%s" % additional if additional != "" else ""
         self.args = cmdline
-        print self.args
         JOptionPane.showMessageDialog(None, "Command line configured!")
 
     def getGeneratorName(self):
