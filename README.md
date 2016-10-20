@@ -8,7 +8,7 @@ In order to make it works, download and install burp extension, then send your r
 ## Screenshot
 ![Burp](https://s15.postimg.org/574yb5c7f/Schermata_2016_10_18_alle_10_39_18.png "Burp Suite Intruder")
 
-![Burp](https://s10.postimg.org/oj7etsbsl/Schermata_2016_10_20_alle_15_04_07.png "Burp Suite Tab")
+![Burp](https://s21.postimg.org/57224kz87/Schermata_2016_10_20_alle_15_04_07.png "Burp Suite Tab")
 
 ![Burp](https://s21.postimg.org/4namauo07/About.png "About")
 
