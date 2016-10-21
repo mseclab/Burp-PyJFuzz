@@ -3,7 +3,7 @@ Burp-PyJFuzz trivial python fuzzer based on radamsa.
 
 MIT License
 
-Copyright (c) 2016 Daniele Linguaglossa <danielelinguaglossa@gmail.com>
+Copyright (c) 2016 Daniele Linguaglossa <d.linguaglossa@mseclab.it>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -59,6 +59,7 @@ PyJFuzz is released under <b><a href= "https://opensource.org/licenses/MIT">MIT<
 not take any legal responsibility for the program usage.<br>
 
 Happy fuzzing<br><br>
+<img src="https://pbs.twimg.com/profile_images/1072826149/mobile_security_lab_logo_medium.png" width="50" height="50">
 <img src="https://i.vimeocdn.com/portrait/7297389_300x300" width="50" height="50">
 <img src="http://2sxc.org/Portals/0/adam/Content/b0u5ab1H1E6dfLHhr4JLog/Image/500px-License_icon-mit.svg.png" width="50" height="50">
 
@@ -73,7 +74,7 @@ Happy fuzzing<br><br>
         callbacks.addSuiteTab(self)
         self.initPanelConfig()
         self._jTabbedPane.addTab("Configuration", self._jPanel)
-        #self._jTabbedPane.addTab("About", self._jAboutPanel)  Leave commented!
+        self._jTabbedPane.addTab("About", self._jAboutPanel)
         return
 
     def getUiComponent(self):
