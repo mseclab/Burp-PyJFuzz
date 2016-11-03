@@ -193,7 +193,7 @@ class JSONFuzzer(IIntruderPayloadGenerator):
     def fuzz(self, original_payload):
         # Call PyJFuzz
         original_payload = urllib.unquote(original_payload)
-        p1 = subprocess.Popen([self.pyjfuzz, '-j', original_payload] + self._args, stdout=subprocess.PIPE)
+        p1 = subprocess.Popen([self.pyjfuzz, '--j', original_payload] + self._args, stdout=subprocess.PIPE)
         output = p1.communicate()
         p1.stdout.close()
         del p1
