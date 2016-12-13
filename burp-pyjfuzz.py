@@ -157,7 +157,7 @@ Happy fuzzing<br><br>
         fuzz_factor = self._jTextFieldFuzzFactor.getText()
         additional = self._jTextFieldAdditionalCmdLine.getText()
         cmdline = "-p %s " % params if params != "" else ""
-        cmdline += "-f %s " % fuzz_factor if fuzz_factor != "" else ""
+        cmdline += "-l %s " % fuzz_factor if fuzz_factor != "" else ""
         cmdline += "-t %s " % techniques if techniques != "" else ""
         cmdline += "%s" % additional if additional != "" else ""
         self.args = cmdline
@@ -193,7 +193,7 @@ class JSONFuzzer(IIntruderPayloadGenerator):
     def fuzz(self, original_payload):
         # Call PyJFuzz
         original_payload = urllib.unquote(original_payload)
-        p1 = subprocess.Popen([self.pyjfuzz, '--J', original_payload] + self._args, stdout=subprocess.PIPE)
+        p1 = subprocess.Popen([self.pyjfuzz, '--J', '%s' % original_payload] + self._args, stdout=subprocess.PIPE)
         output = p1.communicate()
         p1.stdout.close()
         del p1
