@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 =======
 # Burp-PyJFuzz
 Burp Suite plugin which implement PyJFuzz for fuzzing web application.
@@ -20,4 +19,3 @@ Please if you want share details about your finding I would be glad to write the
 #### End
 Thanks
 \#dzonerzy
->>>>>>> 49cd2d6e2812a69985362fa21f93ae5e3d84b6d6
