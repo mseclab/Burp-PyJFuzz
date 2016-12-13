@@ -51,7 +51,7 @@ class BurpExtender(IBurpExtender, IIntruderPayloadGeneratorFactory, ITab):
     _jButtonSetCommandLine = None
     _jLabelAbout = None
     aboutText = """
-<center><h2><b>PyJFuzz</b> - <i>Trivial JSON Fuzzer</i></h2><br>
+<center><img src="https://i.imgsafe.org/fca2320632.png"><h2><b>PyJFuzz</b> - <i>Python JSON Fuzzer</i></h2><br>
 Created by Daniele 'dzonerzy' Linguaglossa, security consultant @ Consulthink S.p.A.<br>
 PyJFuzz is a JSON fuzzer written in pure python, it allows to generate and fuzz JSON object while maintaining<br>
 the structure of original one. This project is still in <b>beta</b> so expect some errors, anyway it should do its work!<br>
