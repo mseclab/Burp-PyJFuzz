@@ -23,7 +23,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
-
+import sys
 import subprocess
 import urllib
 from burp import ITab
@@ -36,6 +36,7 @@ from java.awt import GridBagLayout, GridBagConstraints
 class BurpExtender(IBurpExtender, IIntruderPayloadGeneratorFactory, ITab):
     name = "Burp PyJFuzz"
     args = ""
+    binary = ""
     _jTabbedPane = JTabbedPane()
     _jPanel = JPanel()
     _jAboutPanel = JPanel()
@@ -67,6 +68,12 @@ Happy fuzzing<br><br>
                 """
 
     def registerExtenderCallbacks(self, callbacks):
+        find_bin = subprocess.Popen(["which", "pjf"],stdout=subprocess.PIPE)
+        find_bin.wait()
+        self.binary=find_bin.stdout.read()
+        if not self.binary:
+            sys.stderr.write("Unable to find pjf in path! Please symlink pjf to /usr/local/bin/pjf ")
+        print self.binary
         self._callbacks = callbacks
         self._helpers = callbacks.getHelpers()
         callbacks.setExtensionName(self.name)
@@ -167,16 +174,19 @@ Happy fuzzing<br><br>
         return "PyJFuzz JSON Fuzzer"
 
     def createNewInstance(self, attack):
-        return JSONFuzzer(self, attack, self.args)
+        return JSONFuzzer(self, attack, self.binary, self.args)
 
 
 class JSONFuzzer(IIntruderPayloadGenerator):
-    def __init__(self, extender, attack, args):
+    def __init__(self, extender, attack, pjf, args):
         self._args = args.split()
         self._extender = extender
         self._helpers = extender._helpers
         self._attack = attack
-        self.pyjfuzz = "pjf"
+        if pjf:
+            self.pyjfuzz = pjf
+        else:
+            self.pyjfuzz = "/usr/local/bin/pjf"
         return
 
     def hasMorePayloads(self):
