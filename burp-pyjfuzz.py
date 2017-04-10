@@ -68,7 +68,7 @@ Happy fuzzing<br><br>
                 """
 
     def registerExtenderCallbacks(self, callbacks):
-        find_bin = subprocess.Popen(["which", "pjf"],stdout=subprocess.PIPE)
+        find_bin = subprocess.Popen(["/usr/bin/which", "pjf"],stdout=subprocess.PIPE)
         find_bin.wait()
         self.binary=find_bin.stdout.read()
         if not self.binary:
