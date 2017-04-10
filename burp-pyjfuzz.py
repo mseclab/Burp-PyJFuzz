@@ -73,7 +73,6 @@ Happy fuzzing<br><br>
         self.binary=find_bin.stdout.read()
         if not self.binary:
             sys.stderr.write("Unable to find pjf in path! Please symlink pjf to /usr/local/bin/pjf ")
-        print self.binary
         self._callbacks = callbacks
         self._helpers = callbacks.getHelpers()
         callbacks.setExtensionName(self.name)
