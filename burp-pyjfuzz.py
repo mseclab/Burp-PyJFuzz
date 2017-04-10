@@ -70,7 +70,7 @@ Happy fuzzing<br><br>
     def registerExtenderCallbacks(self, callbacks):
         find_bin = subprocess.Popen(["/usr/bin/which", "pjf"],stdout=subprocess.PIPE)
         find_bin.wait()
-        self.binary=find_bin.stdout.read()
+        self.binary=find_bin.stdout.read().replace("\n", "").replace("\r", "")
         if not self.binary:
             sys.stderr.write("Unable to find pjf in path! Please symlink pjf to /usr/local/bin/pjf ")
         self._callbacks = callbacks
